@@ -1,0 +1,24 @@
+siswa,
+level_siswa, --> not used
+siswa_kelas,
+siswa_kelas_semester,
+siswa_kelas_semester_spp
+
+saya mempunyai masalah, di table siswa tidak ada level_id namun relasinya sebagai berikut:
+pada bagian Forms\Components\Repeater akan ada select ke data:
+- level
+- school_year
+- kelas
+- kelas_category
+
+dan pada action ini akan memasukkan beberapa data ke dalam table:
+- siswa
+- level_siswa
+- siswa_kelas
+- siswa_kelas_semester
+- siswa_kelas_semester_spp
+
+bagaimana form untuk handle ini?
+
+
+Cascade on delete in table school_year + kelas_school_year

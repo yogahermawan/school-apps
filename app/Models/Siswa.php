@@ -19,28 +19,23 @@ class Siswa extends Model
         'nis'
     ];
 
-    public function listLevel()
+    public function levels()
     {
-        return $this->belongsTo(Level::class, 'level_id');
+        return $this->belongsToMany(Level::class, 'siswa_kelas');
     }
-    public function kelas()
+
+    public function schoolYears()
     {
-        return $this->hasMany(SiswaKelas::class, 'kelas_id');
+        return $this->belongsToMany(SchoolYear::class, 'siswa_kelas');
     }
-    public function kelasCategory()
+
+    public function classes()
     {
-        return $this->hasMany(SiswaKelas::class, 'kelas_category_id');
+        return $this->belongsToMany(Kelas::class, 'siswa_kelas');
     }
-    public function level()
+
+    public function classCategories()
     {
-        return $this->hasMany(SiswaKelas::class, 'level_id');
-    }
-    public function siswa()
-    {
-        return $this->hasMany(SiswaKelas::class, 'siswa_id');
-    }
-    public function schoolYear()
-    {
-        return $this->hasMany(SiswaKelas::class, 'school_year_id');
+        return $this->belongsToMany(Kelas::class, 'kelas_categories');
     }
 }
